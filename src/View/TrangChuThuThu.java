@@ -2297,19 +2297,19 @@ public class TrangChuThuThu extends javax.swing.JFrame {
         } catch(Exception e) {
             
         }
-        
-        
-        
         K_tinhTrangSach.setSelectedItem(tblK_ChiTiet.getValueAt(selectedRow, 3));
-//        K_tienPhat.setText(tblK_ChiTiet.getValueAt(selectedRow, 4).toString());
         btnK_suaChiTiet.setEnabled(true);
     }//GEN-LAST:event_tblK_ChiTietMouseClicked
 
     private void btnK_suaChiTietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnK_suaChiTietActionPerformed
         // TODO add your handling code here:
-        K_tinhTrangSach.setEnabled(true);
-        K_ngayThucTra.setEnabled(true);
-//        K_tienPhat.setEnabled(true);
+        if (K_ngayThucTra.getDate()==null) {
+            K_ngayThucTra.setEnabled(true);
+            K_tinhTrangSach.setEnabled(true);
+        } else {
+            K_ngayThucTra.setEnabled(false);
+            K_tinhTrangSach.setEnabled(false);
+        }
         
         btnK_luuChiTiet.setEnabled(true);
         btnK_suaChiTiet.setEnabled(false);
