@@ -19,6 +19,10 @@ public class PhieuMuon_Service {
         pmDAO = new PhieuMuon_DAO();
     }
     
+    public List<PhieuMuon> getAllDSPhieuMuon() {
+        return pmDAO.getAllDSPhieuMuon();
+    }
+    
     public List<PhieuMuon> getDSPhieuMuon() {
         return pmDAO.getDSPhieuMuon();
     }

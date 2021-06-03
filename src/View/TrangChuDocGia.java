@@ -581,6 +581,8 @@ public class TrangChuDocGia extends javax.swing.JFrame {
                 phieuMuon.setSoNgayMuon(Integer.parseInt(cbbHenTra.getSelectedItem().toString()));
                 phieuMuon.setMaTaiKhoan(maTaiKhoan);
                 phieuMuon.setMaCanBo(null);
+                phieuMuon.setTrangThai("Chưa duyệt");
+                phieuMuon.setNgayMuon(null);
                 PM_Services.addPhieuMuon(phieuMuon);
                 
 //              Thêm các sách vào chi tiết phiếu mượn

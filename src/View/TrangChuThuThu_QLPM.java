@@ -669,6 +669,8 @@ public class TrangChuThuThu_QLPM extends javax.swing.JFrame {
             pm1.setMaPM(txtK_maPM_1.getText());
             pm1.setGhiChu(txtK_ghiChu.getText());
             pm1.setTrangThai(cbbK_trangThai.getSelectedItem().toString());
+            pm1.setMaCanBo(cbbK_maCB.getSelectedItem().toString());
+            pm1.setNgayMuon(new java.sql.Date(txtK_ngayMuon.getDate().getTime()).toString());
             
             pms_Service.updatePhieuMuon(pm1);
             loadData_TblDSPM();
@@ -683,8 +685,14 @@ public class TrangChuThuThu_QLPM extends javax.swing.JFrame {
         int selectedRow = tblK_kq.getSelectedRow();
         txtK_maPM_1.setText(tblK_kq.getValueAt(selectedRow, 0).toString());
         loadMaTKwithName(tblK_kq.getValueAt(selectedRow, 1).toString());
-        loadMaCBwithName(tblK_kq.getValueAt(selectedRow, 2).toString());
-        ((JTextField)txtK_ngayMuon.getDateEditor().getUiComponent()).setText(tblK_kq.getValueAt(selectedRow, 3).toString());
+        try {
+            loadMaCBwithName(tblK_kq.getValueAt(selectedRow, 2).toString());
+            ((JTextField)txtK_ngayMuon.getDateEditor().getUiComponent()).setText(tblK_kq.getValueAt(selectedRow, 3).toString());
+        } catch (Exception e) {
+            
+        }
+        
+        
         cbbK_soNgayMuon.setSelectedItem(tblK_kq.getValueAt(selectedRow, 4).toString());
         txtK_ghiChu.setText(tblK_kq.getValueAt(selectedRow, 5).toString());
         cbbK_trangThai.setSelectedItem(tblK_kq.getValueAt(selectedRow, 6).toString());
@@ -700,9 +708,13 @@ public class TrangChuThuThu_QLPM extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtK_ghiChu.setEnabled(true);
         cbbK_trangThai.setEnabled(true);
-        
+        cbbK_maCB.setEnabled(true);
         btnK_suaPM.setEnabled(false);
         btnK_luuPM.setEnabled(true);
+        load_MaCB();
+        if(cbbK_trangThai.getSelectedItem().toString().equals("Chưa duyệt")) {
+            txtK_ngayMuon.setEnabled(true);
+        }
     }//GEN-LAST:event_btnK_suaPMActionPerformed
 
     private void btnK_lamMoiPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnK_lamMoiPMActionPerformed
@@ -850,13 +862,13 @@ public class TrangChuThuThu_QLPM extends javax.swing.JFrame {
         defaultTableModel.setRowCount(0);
         defaultTableModel.addColumn("Mã phiếu mượn");
         defaultTableModel.addColumn("Tên bạn đọc");
-        defaultTableModel.addColumn("Tên cán bộ");
+        defaultTableModel.addColumn("Mã cán bộ");
         defaultTableModel.addColumn("Ngày mượn");
         defaultTableModel.addColumn("Số ngày mượn");
         defaultTableModel.addColumn("Ghi chú");
         defaultTableModel.addColumn("Trạng thái");
         
-        setTableData_DSPM(pms_Service.getDSPhieuMuon());
+        setTableData_DSPM(pms_Service.getAllDSPhieuMuon());
     }
     
     private void loadData_TblCTPM() {
