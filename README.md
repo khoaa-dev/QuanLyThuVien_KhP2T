@@ -6,7 +6,7 @@
 * Thiết kế luồng hoạt động
 2. Công việc riêng:
 * Nguyễn Đình Khoa: Phân chia công việc, Code chức năng Quản Lý Mượn Trả, Kiểm thử phần mềm, Thiết kế cơ sở dữ liệu.
-* Cao Thị Thùy Hằng: Code chức năng Quản Lý Sách và Danh mục Sách, Thiết kế giao diện phần mềm, Thiết kế cơ sở dữ liệu, Viết báo cáo.
+* Cao Thị Thúy Hằng: Code chức năng Quản Lý Sách và Danh mục Sách, Thiết kế giao diện phần mềm, Thiết kế cơ sở dữ liệu, Viết báo cáo.
 * Võ Xuân Phúc: Code chức năng Quản Lý Độc giả, Code chức năng Thống Kê, Kiểm thử phần mềm.
 * Lê Quốc Tuấn: Code chức năng Mượn sách, Kiểm thử phần mềm, Thiết kế cơ sở dữ liệu.
 * Nguyễn Thị Thu Thủy: Thiết kế giao diện trang chủ, Làm slide thuyết trình dự án.
@@ -24,5 +24,5 @@ Phần mèm Quản lý thư viện dành cho sinh viên trường ĐH SPKT sử 
 ```            
 ## IV. Cách sử dụng
 * Đăng nhập bằng tài khoản thủ thư: Tên đăng nhập: 101010 | Mật khẩu: abc123
-* Đăng nhập bằng tài khoản sinh viên: Tên đăng nhập: Mã sinh viên | Mật khẩu: Tự đặt (Ví dụ: 1911505310132 | abc123)
+* Đăng nhập bằng tài khoản sinh viên: Tên đăng nhập: Mã sinh viên | Mật khẩu: Tự đặt (Ví dụ: 1911505310123 | abc123)
 * Video demo dự án: https://youtu.be/kQuOaejObnc
