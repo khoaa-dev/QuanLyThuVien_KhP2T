@@ -5,12 +5,14 @@
  */
 package View;
 
+import DAO.KetNoiSQL;
 import DAO.Sach_Dao_implement;
 import DAO.Sach_dao_thuy;
 import Model.sach_th;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
@@ -27,6 +29,11 @@ public class TrangChuChinh extends javax.swing.JFrame {
      */
     public TrangChuChinh() {
         initComponents();
+        if (KetNoiSQL.getConnection() == null) {
+            JOptionPane.showMessageDialog(null, "Bạn chưa chạy file sql để tạo Database,"
+                + " chỉ chạy file sql này cho lần đầu tiên!", "ERROR", JOptionPane.ERROR_MESSAGE); 
+            System.exit(0);
+        }
         DefaultTableCellRenderer renderers_SearchSach = (DefaultTableCellRenderer) tableSearchSach.getTableHeader().getDefaultRenderer();
         renderers_SearchSach.setHorizontalAlignment(0);
         tableSearchSach.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -452,7 +459,7 @@ public class TrangChuChinh extends javax.swing.JFrame {
                         .addComponent(jLabel14))
                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel21)
                     .addComponent(jLabel20))
                 .addGap(19, 19, 19)

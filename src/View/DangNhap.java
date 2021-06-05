@@ -13,13 +13,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 
 /**
  *
@@ -29,8 +26,6 @@ public class DangNhap extends javax.swing.JFrame {
     DocGia_Dao getDogia = new DocGia_Dao_implement();
     public DangNhap() {
         initComponents();
-        
-        
     }
     
     @SuppressWarnings("unchecked")

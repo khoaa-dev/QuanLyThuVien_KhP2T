@@ -17,10 +17,12 @@ Phần mèm Quản lý thư viện dành cho sinh viên trường ĐH SPKT sử 
 ## III. Một số lưu ý
 * Nếu máy của bạn sử dụng SQL Server 2019 thì hãy chạy file script QuanLyThuVien_SQL2019 để tạo Database trước khi chạy phần mềm.
 * Nếu máy của bạn sử dụng SQL Server 2014 thì hãy chạy file script QuanLyThuVien_SQL2014 để tạo Database trước khi chạy phần mềm.
-
+* Hãy đổi tên server trong file KetNoiSQL.java theo đường dẫn ://src/DAO/KetNoiSQL.java
+```Class.forName(url);
+            String dbUrl = "jdbc:jtds:sqlserver://YourServername:YourPort/QuanLyThuVien6";
+            return DriverManager.getConnection(dbUrl);
+```            
 ## IV. Cách sử dụng
-* Chạy file sql để tạo Database trước khi sử dụng
-* Chạy file jar để sử dụng phần mềm
 * Đăng nhập bằng tài khoản thủ thư: Tên đăng nhập: 101010 | Mật khẩu: abc123
 * Đăng nhập bằng tài khoản sinh viên: Tên đăng nhập: Mã sinh viên | Mật khẩu: Tự đặt (Ví dụ: 1911505310132 | abc123)
 * Video demo dự án: https://youtu.be/kQuOaejObnc
